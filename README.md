@@ -58,7 +58,15 @@ Click the 'Create' button on the right hand side.
 
 ![Shayype Admin](images/shayype_forgerock_client.png)
 
-2.3 Enter the 'Valid Redirect URI' for successful login or logout. For example <div style="display:inline">http://openam.partner.com:80/openam</div>.
+2.3 Enter the Client Secret previously saved when you created the client on Keycloak.
+
+2.4 Enter the 'Valid Redirect URI' for successful login or logout. For example <div style="display:inline">http://openam.partner.com:80/openam</div>.
+
+2.5 Set 'Access Type' to 'confidential'
+
+2.6 Save the client settings.
+
+2.7 Select the 'Credentials' tab. then copy the Secret to your clibboard / notepad to be added to the OpenID Connect node in the ForgeRock Authentication tree.
 
 3. Sign in to the ForgeRock OpenAM System Platform Admin to create an authentication tree as below:
 
