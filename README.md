@@ -58,15 +58,14 @@ Click the 'Create' button on the right hand side.
 
 ![Shayype Admin](images/shayype_forgerock_client.png)
 
-2.3 Enter the Client Secret previously saved when you created the client on Keycloak.
 
-2.4 Enter the 'Valid Redirect URI' for successful login or logout. For example <div style="display:inline">http://openam.partner.com:80/openam</div>.
+2.3 Enter the 'Valid Redirect URI' for successful login or logout. For example <div style="display:inline">http://openam.partner.com:80/openam</div>.
 
-2.5 Set 'Access Type' to 'confidential'
+2.4 Set 'Access Type' to 'confidential'
 
-2.6 Save the client settings.
+2.5 Save the client settings.
 
-2.7 Select the 'Credentials' tab. then copy the Secret to your clibboard / notepad to be added to the OpenID Connect node in the ForgeRock Authentication tree.
+2.6 Select the 'Credentials' tab. then copy the Secret to your clipboard / notepad to be added to the OpenID Connect node in the ForgeRock Authentication tree.
 
 3. Sign in to the ForgeRock OpenAM System Platform Admin to create an authentication tree as below:
 
@@ -80,14 +79,15 @@ Click the 'Create' button on the right hand side.
 
 Connect the User Journey start icon to the OpenID Connect node
 
-
 3.4 Click on the openID Connect node to open the configuration form: 
 
 ![ForgeRock OpenID Connect node form top](images/shayype_forgerock_oid_node_top.png)
 
 3.5 Client ID: enter the name you entered in 2.2 when creating a client on Keycloak.
 
-3.6 Find the following parameters from the endpoint configuration saved in 1.1
+3.6 Enter the Client Secret previously saved when you created the client on Keycloak.
+
+3.7 Find the following parameters from the endpoint configuration saved in 1.1
 
 <div style="display:inline">
 "authorization_endpoint":"https://keycloak.shayype.com:8443/auth/realms/shayype-licensee-id/protocol/openid-connect/auth"
@@ -117,16 +117,16 @@ Use the issuer endpoint and append: .well-known/openid-configuration
 </div>
 Copy and paste the endpoint to "OpenID Connect Validation Value"
 
-3.7 Redirect URL
+3.8 Redirect URL
 Enter the redirect URL 
 
 
-3.8 Provision Dynamic Account if user does not exist
+3.9 Provision Dynamic Account if user does not exist
 
 Under the Nodes section, select FEDERATION, then drag 'Provision Dynamic Account' to the right hand pane.
 Link the OpenID Connect outcome 'No account exists' to the 'Provision Dynamic Account' node
 
-3.9 Add a Success URL
+3.10 Add a Success URL
 
 Under the Nodes section, select UTILITIES, then drag 'Success URL' to the right hand pane.
 Link the OpenID Conect outcome Account exists to the 'Success URL' node
